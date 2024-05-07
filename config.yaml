@@ -1,0 +1,14 @@
+listen_schema: http
+listen_port: 8080
+ssl_certificate: ""
+ssl_certificate_key: ""
+tcp_health_check: true
+tcp_health_check_interval: 3
+max_allowed: 1000
+locations:
+- prefix: /
+  balance_mode: random
+  servers:
+  - "http://127.0.0.1:8081"
+  - "http://127.0.0.1:8082"
+  - "http://127.0.0.1:8083"
